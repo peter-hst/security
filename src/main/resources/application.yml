@@ -1,0 +1,32 @@
+logging:
+  level.org.springframework.security.*: debug
+  level.me.togo.security.*: debug
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: admin
+    url: jdbc:mysql://localhost:3306/securitydb?serverTimezone=UTC
+    druid:
+      initial-size: 5
+      min-idle: 5
+      max-active: 40
+      max-wait: 60000
+      time-between-eviction-runs-millis: 60000
+      min-evictable-idle-time-millis: 300000
+      test-while-idle: true
+      test-on-borrow: false
+      test-on-return: false
+      pool-prepared-statements: true
+      max-pool-prepared-statement-per-connection-size: 30
+      max-open-prepared-statements: 20
+  jpa:
+    generate-ddl: true
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+  devtools:
+    livereload:
+      enabled: true
+    restart:
+      enabled: true
